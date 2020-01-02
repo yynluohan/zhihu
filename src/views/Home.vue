@@ -28,11 +28,15 @@ export default {
     this.fetchImages()
   },
   methods: {
+    // 获取轮播图
     async fetchImages() {
-      const res = await this.$http.get('/posts');
-      console.log('lllll', _.get(res, 'data.data.list', []));
-      this.slideList = _.get(res, 'data.data.list', [])
+      const res = await this.$http.get('/carousel');
+      this.slideList = _.get(res, 'data.data.list', []).map((item, index) => {
+        item.url =  `/newsDetail?id=${item.id}`
+        return item
+      })
     }
   }
 }
 </script>
+

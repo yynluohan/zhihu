@@ -27,6 +27,11 @@ export default {
   mounted () {
     console.log('mmmmm', this)
   },
+  methods: {
+    onClick: function(event) {
+      console.log('BBBB', event)
+    }
+  }
 }
 </script>
 

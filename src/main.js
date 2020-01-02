@@ -7,7 +7,8 @@ import axios from 'axios'
 axios.defaults.baseURL = 'http://zhihu.co/api'
 Vue.prototype.$http = axios
 
-require('./mock/mock.js')
+require('./mock/mock')
+require('./mock/news')
 
 Vue.config.productionTip = false
 
